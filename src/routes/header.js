@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { FaBars } from 'react-icons/fa';
 import { Typography,Button,Toolbar,IconButton,AppBar,Box ,Dialog,DialogContent,DialogTitle,DialogContentText,TextField,DialogActions,Backdrop,Alert} from '@mui/material';
+import { Link } from 'react-router-dom';
 const Header = () => {
    const [open, setOpen] = React.useState(false);
    const [drop, setDrop] = React.useState(false);
@@ -28,18 +28,11 @@ const Header = () => {
     <div>
           <Box sx={{ flexGrow: 1 }}>
       <AppBar color='secondary' position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <FaBars />
-          </IconButton>
+          <Toolbar>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+            <Link className='navLink' to='/'>
             Daily Trend.
+            </Link>
           </Typography>
           <Button onClick={handleClickOpen} sx={{textColor:'black'}} variant='contained' color="inherit"><span>Drop Feedback.</span></Button>
         </Toolbar>
